@@ -37,10 +37,23 @@ class Unit_Tests: XCTestCase {
         // THEN: HomeViewModel's coins should be same as returned data
         XCTAssertEqual(12, sut.coins.count)
     }
+    
+    func test_HomeviewModel_should_show_error_when_network_fails() {
+        // GIVEN: that we have test network layer that returns some coins
+        let networkLayer: INetworkLayer = TestFailingNetworkLayer(response: RequestError.apiError)
+        let sut = HomeViewModel(networkLayer: networkLayer)
+        
+        // WHEN: HomeViewModel's loadData() is called
+        sut.loadData()
+        
+        // THEN: HomeViewModel's coins should be same as returned data
+        XCTAssertEqual(RequestError.apiError.localizedDescription, sut.errorMessage)
+    }
 }
 
 
 
+// MARK: - Network layer that returns data
 class TestNetworkLayer: INetworkLayer {
     let response: CoinsResponse
     
@@ -55,6 +68,22 @@ class TestNetworkLayer: INetworkLayer {
     }
 }
 
+// MARK: - Network layer that fails.
+class TestFailingNetworkLayer: INetworkLayer {
+    let response: RequestError
+    
+    init(response: RequestError){
+        self.response = response
+    }
+    
+    func getCoins() -> AnyPublisher<CoinsResponse, RequestError> {
+        return Result<CoinsResponse, RequestError>
+            .Publisher(.failure(response))
+            .eraseToAnyPublisher()
+    }
+}
+
+// MARK: - Dummy data
 func dummyData(count: Int) -> [CoinDTO] {
     var data = [CoinDTO]()
     for index in 0..<count {

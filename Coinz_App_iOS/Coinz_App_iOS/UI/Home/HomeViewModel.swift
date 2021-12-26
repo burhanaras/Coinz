@@ -17,6 +17,7 @@ class HomeViewModel: ObservableObject {
     private var allCoins = [Coin]()
     private var sortType: SortType = .price
     @Published var sortText: String = "Price"
+    @Published var errorMessage: String = ""
     
     init(networkLayer: INetworkLayer){
         self.networkLayer = networkLayer
@@ -32,6 +33,7 @@ class HomeViewModel: ObservableObject {
                     break
                 case let .failure(error):
                     print(error.localizedDescription)
+                    self.errorMessage = error.localizedDescription
                 }
             } receiveValue: {[unowned self] coinsResponse in
                 print(coinsResponse.data.coins)
