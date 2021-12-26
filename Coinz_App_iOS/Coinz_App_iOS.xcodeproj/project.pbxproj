@@ -13,6 +13,7 @@
 		94B51FE92778D20F00263604 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B51FE82778D20F00263604 /* Preview Assets.xcassets */; };
 		94B51FF52778D58C00263604 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FF42778D58C00263604 /* HomeView.swift */; };
 		94B51FF72778D5A000263604 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FF62778D5A000263604 /* HomeViewModel.swift */; };
+		94B51FFC2778D61E00263604 /* CoinsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FFB2778D61E00263604 /* CoinsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		94B51FE82778D20F00263604 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		94B51FF42778D58C00263604 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		94B51FF62778D5A000263604 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		94B51FFB2778D61E00263604 /* CoinsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		94B51FE02778D20E00263604 /* Coinz_App_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				94B51FF82778D5F100263604 /* Model */,
 				94B51FF12778D56500263604 /* UI */,
 				94B51FF02778D54400263604 /* Network */,
 				94B51FEF2778D4B500263604 /* App */,
@@ -111,6 +114,30 @@
 			children = (
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		94B51FF82778D5F100263604 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94B51FFA2778D60400263604 /* Model Objects */,
+				94B51FF92778D5F900263604 /* Data Transfer Objects */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		94B51FF92778D5F900263604 /* Data Transfer Objects */ = {
+			isa = PBXGroup;
+			children = (
+				94B51FFB2778D61E00263604 /* CoinsResponse.swift */,
+			);
+			path = "Data Transfer Objects";
+			sourceTree = "<group>";
+		};
+		94B51FFA2778D60400263604 /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +213,7 @@
 				94B51FF52778D58C00263604 /* HomeView.swift in Sources */,
 				94B51FE42778D20E00263604 /* ContentView.swift in Sources */,
 				94B51FE22778D20E00263604 /* Coinz_App_iOSApp.swift in Sources */,
+				94B51FFC2778D61E00263604 /* CoinsResponse.swift in Sources */,
 				94B51FF72778D5A000263604 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
