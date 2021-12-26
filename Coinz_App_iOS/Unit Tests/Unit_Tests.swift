@@ -13,7 +13,7 @@ class Unit_Tests: XCTestCase {
 
     func test_mapping_from_DTO_toCoin_should_work_fine(){
         // GIVEN: that we have a CoinDTO
-        let dto = CoinDTO(uuid: "uuid", symbol: "symbol", name: "name", iconUrl: "url", price: "price", marketCap: "marketCap", change: "change", listedAt: 1.0)
+        let dto = CoinDTO(uuid: "uuid", symbol: "symbol", name: "name", iconUrl: "url", price: "12.50", marketCap: "marketCap", change: "change", listedAt: 1.0)
         
         // WHEN: DTO is mapped to Coin
         let sut = Coin.fromDTO(dto: dto)
@@ -25,4 +25,41 @@ class Unit_Tests: XCTestCase {
         XCTAssertEqual(sut.price, "$ \(dto.price)")
     }
 
+    func test_HomeviewModel_should_return_correct_data() {
+        // GIVEN: that we have test network layer that returns some coins
+        let coinsResponse = CoinsResponse(status: "success", data: CoinsDataDTO(coins: dummyData(count: 12)))
+        let networkLayer: INetworkLayer = TestNetworkLayer(response: coinsResponse)
+        let sut = HomeViewModel(networkLayer: networkLayer)
+        
+        // WHEN: HomeViewModel's loadData() is called
+        sut.loadData()
+        
+        // THEN: HomeViewModel's coins should be same as returned data
+        XCTAssertEqual(12, sut.coins.count)
+    }
+}
+
+
+
+class TestNetworkLayer: INetworkLayer {
+    let response: CoinsResponse
+    
+    init(response: CoinsResponse){
+        self.response = response
+    }
+    
+    func getCoins() -> AnyPublisher<CoinsResponse, RequestError> {
+        return Result<CoinsResponse, RequestError>
+            .Publisher(.success(response))
+            .eraseToAnyPublisher()
+    }
+}
+
+func dummyData(count: Int) -> [CoinDTO] {
+    var data = [CoinDTO]()
+    for index in 0..<count {
+        let coin = CoinDTO(uuid: "\(index)", symbol: "symbol", name: "name", iconUrl: "url", price: "12.5", marketCap: "marketCap", change: "change", listedAt: 1.0)
+        data.append(coin)
+    }
+    return data
 }
