@@ -11,16 +11,17 @@ struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
     var body: some View {
         NavigationView{
-            List(viewModel.coins){ coin in
-                CoinView(coin: coin)
-            }
-            .task {
+            VStack{
+                Text("₿ Coinz App").font(.title)
+                ScrollView(.vertical){
+                    ForEach(viewModel.coins){ coin in
+                        CoinView(coin: coin)
+                    }
+                }
+            }.task {
                 viewModel.loadData()
             }
-            .refreshable {
-                viewModel.loadData()
-            }
-            .navigationTitle("₿ Coinz App")
+            .navigationBarHidden(true)
         }
     }
 }
@@ -43,6 +44,7 @@ struct CoinView: View {
             )
                 .padding()
             Text(coin.name)
+            Spacer()
         }
     }
 }
