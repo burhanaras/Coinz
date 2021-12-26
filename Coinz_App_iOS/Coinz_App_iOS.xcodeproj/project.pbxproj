@@ -10,6 +10,7 @@
 		9437D8802778EFE2006ECABA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D87F2778EFE2006ECABA /* DetailView.swift */; };
 		9437D8822778F003006ECABA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D8812778F003006ECABA /* DetailViewModel.swift */; };
 		9437D8852778F259006ECABA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D8842778F259006ECABA /* Coordinator.swift */; };
+		9437D88D2778FA26006ECABA /* Unit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D88C2778FA26006ECABA /* Unit_Tests.swift */; };
 		94B51FE22778D20E00263604 /* Coinz_App_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FE12778D20E00263604 /* Coinz_App_iOSApp.swift */; };
 		94B51FE42778D20E00263604 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FE32778D20E00263604 /* ContentView.swift */; };
 		94B51FE62778D20F00263604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B51FE52778D20F00263604 /* Assets.xcassets */; };
@@ -23,10 +24,22 @@
 		94B520042778D6B900263604 /* NetworkLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B520032778D6B900263604 /* NetworkLayer+Extension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9437D88E2778FA26006ECABA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94B51FD62778D20E00263604 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94B51FDD2778D20E00263604;
+			remoteInfo = Coinz_App_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		9437D87F2778EFE2006ECABA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9437D8812778F003006ECABA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		9437D8842778F259006ECABA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9437D88A2778FA25006ECABA /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9437D88C2778FA26006ECABA /* Unit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit_Tests.swift; sourceTree = "<group>"; };
 		94B51FDE2778D20E00263604 /* Coinz_App_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinz_App_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51FE12778D20E00263604 /* Coinz_App_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coinz_App_iOSApp.swift; sourceTree = "<group>"; };
 		94B51FE32778D20E00263604 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +55,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9437D8872778FA25006ECABA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94B51FDB2778D20E00263604 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,10 +80,19 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		9437D88B2778FA26006ECABA /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9437D88C2778FA26006ECABA /* Unit_Tests.swift */,
+			);
+			path = "Unit Tests";
+			sourceTree = "<group>";
+		};
 		94B51FD52778D20E00263604 = {
 			isa = PBXGroup;
 			children = (
 				94B51FE02778D20E00263604 /* Coinz_App_iOS */,
+				9437D88B2778FA26006ECABA /* Unit Tests */,
 				94B51FDF2778D20E00263604 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				94B51FDE2778D20E00263604 /* Coinz_App_iOS.app */,
+				9437D88A2778FA25006ECABA /* Unit Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +202,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9437D8892778FA25006ECABA /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9437D8902778FA26006ECABA /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				9437D8862778FA25006ECABA /* Sources */,
+				9437D8872778FA25006ECABA /* Frameworks */,
+				9437D8882778FA25006ECABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9437D88F2778FA26006ECABA /* PBXTargetDependency */,
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = 9437D88A2778FA25006ECABA /* Unit Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		94B51FDD2778D20E00263604 /* Coinz_App_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94B51FEC2778D20F00263604 /* Build configuration list for PBXNativeTarget "Coinz_App_iOS" */;
@@ -199,6 +247,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					9437D8892778FA25006ECABA = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 94B51FDD2778D20E00263604;
+					};
 					94B51FDD2778D20E00263604 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -218,11 +270,19 @@
 			projectRoot = "";
 			targets = (
 				94B51FDD2778D20E00263604 /* Coinz_App_iOS */,
+				9437D8892778FA25006ECABA /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9437D8882778FA25006ECABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94B51FDC2778D20E00263604 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +295,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9437D8862778FA25006ECABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9437D88D2778FA26006ECABA /* Unit_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94B51FDA2778D20E00263604 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,7 +324,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9437D88F2778FA26006ECABA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94B51FDD2778D20E00263604 /* Coinz_App_iOS */;
+			targetProxy = 9437D88E2778FA26006ECABA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		9437D8912778FA26006ECABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6QHU56UTR8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.burhan.Unit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coinz_App_iOS.app/Coinz_App_iOS";
+			};
+			name = Debug;
+		};
+		9437D8922778FA26006ECABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6QHU56UTR8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.burhan.Unit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coinz_App_iOS.app/Coinz_App_iOS";
+			};
+			name = Release;
+		};
 		94B51FEA2778D20F00263604 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -434,6 +546,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9437D8902778FA26006ECABA /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9437D8912778FA26006ECABA /* Debug */,
+				9437D8922778FA26006ECABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		94B51FD92778D20E00263604 /* Build configuration list for PBXProject "Coinz_App_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
