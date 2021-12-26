@@ -12,7 +12,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView{
             List(viewModel.coins){ coin in
-                Text(coin.name)
+                CoinView(coin: coin)
             }
             .task {
                 viewModel.loadData()
@@ -21,6 +21,28 @@ struct HomeView: View {
                 viewModel.loadData()
             }
             .navigationTitle("₿ Coinz App")
+        }
+    }
+}
+
+
+struct CoinView: View {
+    let coin: Coin
+    var body: some View {
+        HStack {
+            AsyncImage(
+                url: coin.iconUrl,
+                content: { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 32, height: 32, alignment: .center)
+                },
+                placeholder: {
+                    ProgressView()
+                }
+            )
+                .padding()
+            Text(coin.name)
         }
     }
 }
