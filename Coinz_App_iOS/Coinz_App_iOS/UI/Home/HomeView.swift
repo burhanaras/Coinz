@@ -11,9 +11,9 @@ struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
     var body: some View {
         NavigationView{
-            VStack{
-                ScrollView(.vertical){
-                    Text("₿ Coinz App").font(.title)
+            ScrollView(.vertical){
+                LazyVStack{
+                    topBar.padding()
                     ForEach(viewModel.coins){ coin in
                         CoinView(coin: coin)
                             .padding(4)
@@ -23,6 +23,35 @@ struct HomeView: View {
                 viewModel.loadData()
             }
             .navigationBarHidden(true)
+        }
+    }
+    var topBar: some View {
+        HStack {
+            Text("₿ Coinz App").font(.title)
+            Spacer()
+            Menu {
+                Button {
+                    viewModel.sortData(with: .price)
+                } label: {
+                    Text("Price")
+                }
+                
+                Button {
+                    viewModel.sortData(with: .marketCap)
+                } label: {
+                    Text("Market Cap")
+                }
+                
+                Button {
+                    viewModel.sortData(with: .change)
+                } label: {
+                    Text("Change")
+                }
+
+            } label: {
+                Text("Filter Type")
+            }
+
         }
     }
 }
