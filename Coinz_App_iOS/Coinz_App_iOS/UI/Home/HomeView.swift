@@ -12,10 +12,11 @@ struct HomeView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("₿ Coinz App").font(.title)
                 ScrollView(.vertical){
+                    Text("₿ Coinz App").font(.title)
                     ForEach(viewModel.coins){ coin in
                         CoinView(coin: coin)
+                            .padding(4)
                     }
                 }
             }.task {
@@ -43,10 +44,25 @@ struct CoinView: View {
                 }
             )
                 .padding()
-            Text(coin.name)
-            Spacer()
+            VStack(spacing: 8) {
+                HStack {
+                    Text(coin.symbol)
+                    Spacer()
+                    Text(coin.price)
+                }
+                HStack{
+                    Text(coin.name)
+                    Spacer()
+                    Text(coin.change)
+                }
+            }
         }
+        .padding(4)
+        .background(Color.gray.opacity(0.2))
+        .cornerRadius(6)
+        .shadow(radius: 16)
     }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
