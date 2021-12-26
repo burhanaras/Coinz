@@ -15,6 +15,7 @@ struct CoinDTO: Codable {
     let price: String
     let marketCap: String
     let change: String
+    let listedAt: Double
 }
 
 struct CoinsDataDTO: Codable {

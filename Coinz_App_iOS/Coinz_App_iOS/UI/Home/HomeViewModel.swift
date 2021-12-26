@@ -16,6 +16,7 @@ class HomeViewModel: ObservableObject {
     
     private var allCoins = [Coin]()
     private var sortType: SortType = .price
+    @Published var sortText: String = "Price"
     
     //MARK: - Helper functions
     func loadData() {
@@ -37,17 +38,20 @@ class HomeViewModel: ObservableObject {
     }
     
     func sortData(with sortType: SortType) {
+        self.sortType = sortType
         switch sortType {
         case .price:
+            self.sortText = "Price"
             self.coins = allCoins.sorted(by: { $0.price.toDouble() > $1.price.toDouble() })
         case .marketCap:
+            self.sortText = "Market Cap"
             self.coins = allCoins.sorted(by: { $0.marketCap.toDouble() > $1.marketCap.toDouble() })
-        case .volume:
-            self.coins = allCoins.sorted(by: { $0.price > $1.price })
         case .change:
+            self.sortText = "Change"
             self.coins = allCoins.sorted(by: { $0.change.toDouble() > $1.change.toDouble() })
         case .listedAt:
-            self.coins = allCoins.sorted(by: { $0.price > $1.price })
+            self.sortText = "Listed At"
+            self.coins = allCoins.sorted(by: { $0.listedAt > $1.listedAt })
         }
     }
     
@@ -55,7 +59,7 @@ class HomeViewModel: ObservableObject {
 
 
 enum SortType {
-    case price, marketCap, volume, change, listedAt
+    case price, marketCap, change, listedAt
 }
 
 extension String {

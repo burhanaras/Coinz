@@ -48,8 +48,14 @@ struct HomeView: View {
                     Text("Change")
                 }
 
+                Button {
+                    viewModel.sortData(with: .listedAt)
+                } label: {
+                    Text("Listed At")
+                }
+                
             } label: {
-                Text("Filter Type")
+                Text(viewModel.sortText)
             }
 
         }

@@ -15,6 +15,7 @@ struct Coin: Identifiable {
     let price: String
     let marketCap: String
     let change: String
+    let listedAt: Double
 }
 
 extension Coin {
@@ -23,6 +24,6 @@ extension Coin {
         let price = "$ \(String(format:"%.2f", pi))"
         
         return Coin(
-            id: dto.uuid, symbol: dto.symbol, name: dto.name, iconUrl: URL(string: dto.iconUrl) ?? URL(string: "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg")!, price: price, marketCap: dto.marketCap, change: dto.change)
+            id: dto.uuid, symbol: dto.symbol, name: dto.name, iconUrl: URL(string: dto.iconUrl) ?? URL(string: "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg")!, price: price, marketCap: dto.marketCap, change: dto.change, listedAt: dto.listedAt)
     }
 }
