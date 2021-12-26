@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9437D8802778EFE2006ECABA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D87F2778EFE2006ECABA /* DetailView.swift */; };
+		9437D8822778F003006ECABA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D8812778F003006ECABA /* DetailViewModel.swift */; };
+		9437D8852778F259006ECABA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D8842778F259006ECABA /* Coordinator.swift */; };
 		94B51FE22778D20E00263604 /* Coinz_App_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FE12778D20E00263604 /* Coinz_App_iOSApp.swift */; };
 		94B51FE42778D20E00263604 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FE32778D20E00263604 /* ContentView.swift */; };
 		94B51FE62778D20F00263604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B51FE52778D20F00263604 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9437D87F2778EFE2006ECABA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		9437D8812778F003006ECABA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		9437D8842778F259006ECABA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		94B51FDE2778D20E00263604 /* Coinz_App_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinz_App_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51FE12778D20E00263604 /* Coinz_App_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coinz_App_iOSApp.swift; sourceTree = "<group>"; };
 		94B51FE32778D20E00263604 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9437D8832778F24E006ECABA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9437D8842778F259006ECABA /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		94B51FD52778D20E00263604 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +79,7 @@
 		94B51FE02778D20E00263604 /* Coinz_App_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				9437D8832778F24E006ECABA /* Coordinator */,
 				94B51FF82778D5F100263604 /* Model */,
 				94B51FF02778D54400263604 /* Network */,
 				94B51FF12778D56500263604 /* UI */,
@@ -123,6 +138,8 @@
 		94B51FF32778D57500263604 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				9437D87F2778EFE2006ECABA /* DetailView.swift */,
+				9437D8812778F003006ECABA /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -225,11 +242,14 @@
 				94B520002778D67800263604 /* RequestError.swift in Sources */,
 				94B51FFE2778D64300263604 /* Coin.swift in Sources */,
 				94B51FF52778D58C00263604 /* HomeView.swift in Sources */,
+				9437D8802778EFE2006ECABA /* DetailView.swift in Sources */,
 				94B520042778D6B900263604 /* NetworkLayer+Extension.swift in Sources */,
 				94B51FE42778D20E00263604 /* ContentView.swift in Sources */,
 				94B520022778D69700263604 /* NetworkLayer.swift in Sources */,
 				94B51FE22778D20E00263604 /* Coinz_App_iOSApp.swift in Sources */,
+				9437D8852778F259006ECABA /* Coordinator.swift in Sources */,
 				94B51FFC2778D61E00263604 /* CoinsResponse.swift in Sources */,
+				9437D8822778F003006ECABA /* DetailViewModel.swift in Sources */,
 				94B51FF72778D5A000263604 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

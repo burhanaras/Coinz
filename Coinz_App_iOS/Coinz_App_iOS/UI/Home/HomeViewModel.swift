@@ -12,11 +12,15 @@ class HomeViewModel: ObservableObject {
     //MARK: - Properties
     @Published var coins = [Coin]()
     @Published var cancellables: Set<AnyCancellable> = []
-    @Published var networkLayer: INetworkLayer = NetworkLayer()
+    @Published var networkLayer: INetworkLayer
     
     private var allCoins = [Coin]()
     private var sortType: SortType = .price
     @Published var sortText: String = "Price"
+    
+    init(networkLayer: INetworkLayer){
+        self.networkLayer = networkLayer
+    }
     
     //MARK: - Helper functions
     func loadData() {

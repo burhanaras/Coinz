@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var viewModel = HomeViewModel()
+    @ObservedObject var viewModel: HomeViewModel
     var body: some View {
         NavigationView{
             ScrollView(.vertical){
                 LazyVStack{
                     topBar.padding()
                     ForEach(viewModel.coins){ coin in
-                        CoinView(coin: coin)
-                            .padding(4)
+                        NavigationLink{
+                            Coordinator.shared.getDetailView(for: coin)
+                        } label: {
+                            CoinView(coin: coin)
+                                .padding(4)
+                        }
+
                     }
                 }
             }.task {
@@ -31,25 +36,25 @@ struct HomeView: View {
             Spacer()
             Menu {
                 Button {
-                    viewModel.sortData(with: .price)
+                    viewModel.sortData(with: SortType.price)
                 } label: {
                     Text("Price")
                 }
                 
                 Button {
-                    viewModel.sortData(with: .marketCap)
+                    viewModel.sortData(with: SortType.marketCap)
                 } label: {
                     Text("Market Cap")
                 }
                 
                 Button {
-                    viewModel.sortData(with: .change)
+                    viewModel.sortData(with: SortType.change)
                 } label: {
                     Text("Change")
                 }
 
                 Button {
-                    viewModel.sortData(with: .listedAt)
+                    viewModel.sortData(with: SortType.listedAt)
                 } label: {
                     Text("Listed At")
                 }
@@ -102,6 +107,6 @@ struct CoinView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: HomeViewModel(networkLayer: NetworkLayer()))
     }
 }

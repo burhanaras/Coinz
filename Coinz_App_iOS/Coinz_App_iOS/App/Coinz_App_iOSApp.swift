@@ -11,7 +11,7 @@ import SwiftUI
 struct Coinz_App_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            Coordinator.shared.getHomeView()
         }
     }
 }
