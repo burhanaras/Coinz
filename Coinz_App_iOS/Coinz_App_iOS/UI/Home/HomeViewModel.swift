@@ -11,17 +11,21 @@ import Combine
 class HomeViewModel: ObservableObject {
     //MARK: - Properties
     @Published var coins = [Coin]()
-    @Published var cancellables: Set<AnyCancellable> = []
-    @Published var networkLayer: INetworkLayer
+    private var cancellables: Set<AnyCancellable> = []
+    private var networkLayer: INetworkLayer
+    private var databaseLayer: IDatabaseLayer
     
     private var allCoins = [Coin]()
     private var sortType: SortType = .price
     @Published var sortText: String = "Price"
     @Published var errorMessage: String = ""
     
-    init(networkLayer: INetworkLayer){
+    init(networkLayer: INetworkLayer, databaseLayer: IDatabaseLayer){
         self.networkLayer = networkLayer
+        self.databaseLayer = databaseLayer
     }
+    
+   
     
     //MARK: - Helper functions
     func loadData() {
@@ -39,6 +43,7 @@ class HomeViewModel: ObservableObject {
                 print(coinsResponse.data.coins)
                 self.allCoins = coinsResponse.data.coins.map{ Coin.fromDTO(dto: $0)}
                 sortData(with: sortType)
+                databaseLayer.save(data: allCoins)
             }
             .store(in: &cancellables)
     }

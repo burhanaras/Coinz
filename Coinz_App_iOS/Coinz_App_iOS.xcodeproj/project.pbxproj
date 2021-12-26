@@ -11,6 +11,7 @@
 		9437D8822778F003006ECABA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D8812778F003006ECABA /* DetailViewModel.swift */; };
 		9437D8852778F259006ECABA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D8842778F259006ECABA /* Coordinator.swift */; };
 		9437D88D2778FA26006ECABA /* Unit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D88C2778FA26006ECABA /* Unit_Tests.swift */; };
+		9437D895277901C2006ECABA /* DatabaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437D894277901C2006ECABA /* DatabaseLayer.swift */; };
 		94B51FE22778D20E00263604 /* Coinz_App_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FE12778D20E00263604 /* Coinz_App_iOSApp.swift */; };
 		94B51FE42778D20E00263604 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B51FE32778D20E00263604 /* ContentView.swift */; };
 		94B51FE62778D20F00263604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B51FE52778D20F00263604 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		9437D8842778F259006ECABA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9437D88A2778FA25006ECABA /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437D88C2778FA26006ECABA /* Unit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit_Tests.swift; sourceTree = "<group>"; };
+		9437D894277901C2006ECABA /* DatabaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseLayer.swift; sourceTree = "<group>"; };
 		94B51FDE2778D20E00263604 /* Coinz_App_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinz_App_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51FE12778D20E00263604 /* Coinz_App_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coinz_App_iOSApp.swift; sourceTree = "<group>"; };
 		94B51FE32778D20E00263604 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
+		9437D893277901B0006ECABA /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				9437D894277901C2006ECABA /* DatabaseLayer.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		94B51FD52778D20E00263604 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		94B51FE02778D20E00263604 /* Coinz_App_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				9437D893277901B0006ECABA /* Database */,
 				9437D8832778F24E006ECABA /* Coordinator */,
 				94B51FF82778D5F100263604 /* Model */,
 				94B51FF02778D54400263604 /* Network */,
@@ -319,6 +330,7 @@
 				94B51FFC2778D61E00263604 /* CoinsResponse.swift in Sources */,
 				9437D8822778F003006ECABA /* DetailViewModel.swift in Sources */,
 				94B51FF72778D5A000263604 /* HomeViewModel.swift in Sources */,
+				9437D895277901C2006ECABA /* DatabaseLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

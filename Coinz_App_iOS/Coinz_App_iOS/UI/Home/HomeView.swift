@@ -107,6 +107,6 @@ struct CoinView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: HomeViewModel(networkLayer: NetworkLayer()))
+        HomeView(viewModel: HomeViewModel(networkLayer: NetworkLayer(), databaseLayer: DatabaseLayer()))
     }
 }

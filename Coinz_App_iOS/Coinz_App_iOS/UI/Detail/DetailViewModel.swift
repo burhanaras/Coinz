@@ -8,5 +8,22 @@
 import Foundation
 
 class DetailViewModel: ObservableObject {
-    @Published var data: [(String, String)] = []
+    @Published var data: [String] = []
+    private var coin: Coin
+    private let databaseLayer: IDatabaseLayer
+    
+    init(coin: Coin, databaseLayer: IDatabaseLayer){
+        self.coin = coin
+        self.databaseLayer = databaseLayer
+        loadData()
+    }
+    
+    
+    
+    func loadData() {
+        databaseLayer.retrieve(for: coin.id){[unowned self] data in
+            self.data = data
+            print(data.count)
+        }
+    }
 }
